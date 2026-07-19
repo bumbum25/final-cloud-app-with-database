@@ -36,20 +36,45 @@
 </nav>
 
 <div class="container-fluid">
-    {% if grade > 80 %}
-    <div class="alert alert-success">
-       <!--HINT Display passed info -->
+    {% if grade >= 80 %}
+    <div class="alert alert-success mt-3">
+       <strong>Congratulations, {{ user.first_name }}!</strong> You have passed the exam for the course <strong>{{ course.name }}</strong> with a score of <strong>{{ grade|floatformat:2 }}%</strong>.
     </div>
-        {% else %}
-        <div class="alert alert-danger">
-            <!--HINT Display failed info -->
+    {% else %}
+    <div class="alert alert-danger mt-3">
+        <strong>Sorry, {{ user.first_name }}!</strong> You have failed the exam for the course <strong>{{ course.name }}</strong>. Your score was <strong>{{ grade|floatformat:2 }}%</strong>. Please try again.
+    </div>
+    <a class="btn btn-warning btn-block mt-2" href="{% url 'onlinecourse:course_details' course.id %}">Re-test</a>
+    {% endif %}
+
+    <div class="mt-4">
+        <h3>Exam Results</h3>
+        {% for result in question_results %}
+        <div class="card mt-3">
+            <div class="card-header">
+                <h5>{{ result.question.question_text }}</h5>
+            </div>
+            <div class="card-body">
+                {% if result.is_correct %}
+                <span class="badge badge-success mb-2">Correct</span>
+                {% else %}
+                <span class="badge badge-danger mb-2">Incorrect</span>
+                {% endif %}
+                
+                <h6 class="mt-2">Selected Choices:</h6>
+                <ul class="list-group">
+                    {% for choice in result.selected_choices %}
+                    <li class="list-group-item list-group-item-info">
+                        {{ choice.choice_text }}
+                    </li>
+                    {% empty %}
+                    <li class="list-group-item list-group-item-warning">No choices selected</li>
+                    {% endfor %}
+                </ul>
+            </div>
         </div>
-        <a class="btn btn-link text-danger" href="{% url 'onlinecourse:course_details' course.id %}">Re-test</a>
-        {% endif %}
-        <div class="card-columns-vertical mt-1">
-        <h5 class="">Exam results</h5>
-            <!--HINT Display exam results-->
-        </div>
+        {% endfor %}
+    </div>
     </div>
 </body>
 </html>
