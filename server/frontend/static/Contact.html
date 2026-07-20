@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us - Dealerships</title>
+  <link rel="stylesheet" href="/static/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div>
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color:darkturquoise; height: 1in;">
+    <div class="container-fluid">
+      <h2 style="padding-right: 5%;">Dealerships</h2>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" style="font-size: larger;" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="font-size: larger;" href="/about">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" style="font-size: larger;" href="/contact">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="card" style="width: 80%; margin: auto; margin-top: 5%;">
+    <div class="banner" name="contact-header" style="text-align: center; padding: 20px; background-color: #f8f9fa;">
+      <h1>Contact Us</h1>
+      <p style="font-size: 1.2rem; color: #555;">We would love to hear from you. Get in touch with us using the details below.</p>
+    </div>
+    
+    <div style="display: flex; flex-direction: row; justify-content: space-between; margin: 30px auto; width: 90%;">
+      <div class="card" style="width: 45%; padding: 20px;">
+        <h3>Our Office</h3>
+        <hr>
+        <p><strong>Address:</strong> 123 Car Avenue, Auto City, AC 98765</p>
+        <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+        <p><strong>Email:</strong> support@bestdealership.com</p>
+        <p><strong>Hours:</strong> Mon - Sat: 9:00 AM - 6:00 PM</p>
+        <img class="img-fluid" src="/static/contactus.png" alt="Contact Us Banner" style="max-height: 200px; object-fit: contain; margin-top: 15px;">
+      </div>
+
+      <div class="card" style="width: 45%; padding: 20px;">
+        <h3>Inquiry Form</h3>
+        <hr>
+        <form>
+          <div class="mb-3">
+            <label for="nameInput" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="nameInput" placeholder="Enter your name">
+          </div>
+          <div class="mb-3">
+            <label for="emailInput" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="emailInput" placeholder="name@example.com">
+          </div>
+          <div class="mb-3">
+            <label for="messageInput" class="form-label">Message</label>
+            <textarea class="form-control" id="messageInput" rows="4" placeholder="How can we help you?"></textarea>
+          </div>
+          <button type="button" class="btn btn-primary" style="background-color: darkturquoise; border: none;">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
