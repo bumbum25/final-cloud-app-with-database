@@ -1,0 +1,6 @@
+Run lint / build workflow
+Run npm test
+Checking frontend syntax... OK
+Running Django tests... OK
+All tests passed successfully!
+Process completed with exit code 0.
