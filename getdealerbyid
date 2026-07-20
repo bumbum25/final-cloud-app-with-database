@@ -1,5 +1,5 @@
 Command:
-curl -X GET http://localhost:8000/djangoapp/dealer/15
+curl -X GET http://localhost:3000/fetchDealer/15
 
 Output:
-{"status": 200, "dealer": [{"id": 15, "city": "San Antonio", "state": "Texas", "st": "TX", "address": "5057 Pankratz Hill", "zip": "78225", "lat": 29.3875, "long": -98.5245, "short_name": "Tempsoft", "full_name": "Tempsoft Car Dealership"}]}
+[{"id":15,"city":"San Antonio","state":"Texas","address":"5057 Pankratz Hill","zip":"78225","lat":29.3875,"long":-98.5245,"short_name":"Tempsoft","full_name":"Tempsoft Car Dealership"}]
